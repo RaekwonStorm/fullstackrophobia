@@ -22,13 +22,13 @@ export default (props) => (
 
         <ul className="nav navbar-nav">
           <li>
-           <Link to="/main" activeClassName="active">Maybe go home?</Link>
+           <Link to="/home" activeClassName="active">Maybe go home?</Link>
           </li>
           <li className="">
-            <Link to='/something' activeClassName="active">Link to something</Link>
+            <Link to='/game' activeClassName="active">Link to game state</Link>
           </li>
           <li>
-            <Link to='/whatever' activeClassName="active">Link to something</Link>
+            <Link to='/ranking' activeClassName="active">Link to ranking</Link>
           </li>
         </ul>
 

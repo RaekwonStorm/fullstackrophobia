@@ -8,11 +8,17 @@ import {
   browserHistory
 } from 'react-router';
 import App from './components/App';
-// import Main from './components/Main';
+import Home from './components/Home';
+import Ranking from './components/Ranking';
+import GameContainer from './containers/GameContainer';
 
 export default () => (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
+      <IndexRedirect to="/home" />
+      <Route path="/home" component={Home}/>
+      <Route path="/ranking" component={Ranking}/>
+      <Route path="/game" component={GameContainer}/>
     </Route>
   </Router>
 );
