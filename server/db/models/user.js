@@ -2,6 +2,7 @@
 
 const db = require('../db');
 const DataTypes = db.Sequelize;
+const Round = require('./round');
 
 module.exports = db.define('User', {
   first_name: {
@@ -20,6 +21,13 @@ module.exports = db.define('User', {
   instanceMethods: {
     getFullName: function () {
       return `${this.first_name} ${this.last_name}`;
+    },
+    getWins: function () {
+      return Round.find({
+        where: {
+          winner: this.id
+        }
+      });
     }
   }
 });
