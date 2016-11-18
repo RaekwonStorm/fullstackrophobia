@@ -16,6 +16,9 @@ module.exports = db.define('User', {
   },
   cohort: {
     type: DataTypes.STRING
+  },
+  imageUrl: {
+    type: DataTypes.STRING
   }
 }, {
   instanceMethods: {

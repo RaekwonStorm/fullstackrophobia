@@ -30,6 +30,9 @@ export default (props) => (
           <li>
             <Link to='/ranking' activeClassName="active">Link to ranking</Link>
           </li>
+          <li>
+            <Link to="/newgame" activeClassName="active">Create Game</Link>
+          </li>
         </ul>
 
         <ul className="nav navbar-nav navbar-right">
