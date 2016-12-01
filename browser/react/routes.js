@@ -12,6 +12,7 @@ import Home from './components/Home';
 import Ranking from './components/Ranking';
 import NewGame from './components/NewGame';
 import GameContainer from './containers/GameContainer';
+import { getUsersCohorts } from './enter-hooks'
 
 export default () => (
   <Router history={browserHistory}>
@@ -20,7 +21,7 @@ export default () => (
       <Route path="/home" component={Home}/>
       <Route path="/ranking" component={Ranking}/>
       <Route path="/game" component={GameContainer}/>
-      <Route path="/newgame" component={NewGame}/>
+      <Route path="/newgame" component={NewGame} onEnter={getUsersCohorts} />
     </Route>
   </Router>
 );
