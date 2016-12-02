@@ -1,13 +1,13 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import { NEW_ROUND } from '../action-creators/GameActions';
+import { NEW_ROUND, SAVE_GAME, SET_COHORTS } from '../action-creators/GameActions';
+import user from './user.reducer';
+import game from './game.reducer';
+import cohort from './cohort.reducer';
 
-function GameReducer (state = {}, action ) {
-  switch (action.type) {
-    case NEW_ROUND: return Object.assign({}, state, action.round);
-    default: return state;
-  }
-}
-
-export default combineReducers({ round: GameReducer});
+export default combineReducers({
+  user,
+  game,
+  cohort
+});

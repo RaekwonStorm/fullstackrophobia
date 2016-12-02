@@ -1,6 +1,5 @@
-export const NEW_ROUND = 'NEW_ROUND';
-export const SAVE_ROUND = 'SAVE_ROUND';
-export const GENERATE_ROUND = 'GENERATE_ROUND';
+import axios from 'axios';
+import { NEW_ROUND, SAVE_ROUND, SAVE_GAME, SET_COHORTS } from '../constants';
 
 export const newRound = function (round) {
   const action = {
@@ -16,6 +15,30 @@ export const saveRound = function () {
   };
   return action;
 };
+
+export const saveGameToState = function (game) {
+  const action = {
+    type: SAVE_GAME,
+    game
+  }
+  return action;
+}
+
+export const setCohortsForNewGame = function (cohorts) {
+  const action = {
+    type: SET_COHORTS,
+    cohorts
+  }
+}
+
+export const createGame = function (game) {
+  const thunk = function (dispatch) {
+    axios('api/game', game)
+      .then(res => res.data)
+      .then(game => dispatch(saveGameToState(game)))
+      .catch(console.error)
+  }
+}
 
 const dictionary = {
   A: 12, B: 5, C: 4, D: 3, E: 2, F: 4, G: 2, H: 7, I: 6, J: 1, K: 1, L: 3, M: 4,

@@ -4,11 +4,7 @@ import { connect } from 'react-redux';
 import { generateRound } from '../action-creators/GameActions';
 import Game from '../components/Game';
 
-const mapStateToProps = function ({round}, ownProps) {
-  return {
-    round
-  };
-}
+const mapStateToProps = ({ game }, ownProps) => ({ game });
 
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
